@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "Quadcopter_Code_Arduino", "Quadcopter_Code_Arduino.cppproj", "{A110ED62-6917-48CF-945C-628148C07E06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A110ED62-6917-48CF-945C-628148C07E06}.Debug|AVR.ActiveCfg = Debug|AVR
+		{A110ED62-6917-48CF-945C-628148C07E06}.Debug|AVR.Build.0 = Debug|AVR
+		{A110ED62-6917-48CF-945C-628148C07E06}.Release|AVR.ActiveCfg = Release|AVR
+		{A110ED62-6917-48CF-945C-628148C07E06}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

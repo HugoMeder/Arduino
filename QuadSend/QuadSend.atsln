@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "QuadSend", "QuadSend.cppproj", "{089687F3-2E10-462C-976A-956D243FB3EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{089687F3-2E10-462C-976A-956D243FB3EA}.Debug|AVR.ActiveCfg = Debug|AVR
+		{089687F3-2E10-462C-976A-956D243FB3EA}.Debug|AVR.Build.0 = Debug|AVR
+		{089687F3-2E10-462C-976A-956D243FB3EA}.Release|AVR.ActiveCfg = Release|AVR
+		{089687F3-2E10-462C-976A-956D243FB3EA}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
