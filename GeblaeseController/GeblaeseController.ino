@@ -5,8 +5,8 @@
 //Adafruit_MPL115A2 mpl115a2;
 
 
-#define DHTPIN_EXTERN 9
-#define DHTPIN_INTERN 8
+#define DHTPIN_EXTERN 8
+#define DHTPIN_INTERN 9
 #define DHTTYPE DHT22 //DHT11, DHT21, DHT22
 #define blnkPin 13
 #define RelaisPin 3
@@ -46,7 +46,7 @@ void setup()
 
   dht_extern.begin();
   dht_intern.begin();
-  relaisOn () ;
+  //relaisOn () ;
   //mpl115a2.begin();
 }
 
@@ -76,10 +76,10 @@ void readHumTempSensorsAndReport () {
   Serial.println(";");
 }
 
-#define min_hum 50
+#define min_hum 40
 #define max_hum 80
 #define min_delta 10
-#define max_delta 5
+#define max_delta 1
 
 void getSensorValuenextControlSecssAndDecide () {
   float h_e = dht_extern.readHumidity(); //Luftfeuchte auslesen
@@ -95,11 +95,11 @@ void getSensorValuenextControlSecssAndDecide () {
     doSwitchOn = false ;
   } else if ( h_i > max_hum ) {
     critDelta = max_delta ;
-    doSwitchOn = ph20_delta > critDelta ;
+    doSwitchOn = (ph20_delta > critDelta) ;
   } else {
     float x = (h_i-min_hum)/(max_hum-min_hum) ;
     critDelta = max_delta*x+min_delta*(1.0-x) ;
-    doSwitchOn = ph20_delta > critDelta ;
+    doSwitchOn = (ph20_delta > critDelta) ;
   }
   if ( doSwitchOn ) {
     relaisOn () ;
@@ -120,7 +120,10 @@ void getSensorValuenextControlSecssAndDecide () {
   Serial.print(ph2O_i) ;
   Serial.print(";");
   Serial.print(critDelta);
-  if ( relaisOn )
+  Serial.print(";");
+  Serial.print(ph20_delta
+  );
+  if ( doSwitchOn )
     Serial.print(";+;");
   else
     Serial.print(";-;");
@@ -205,7 +208,7 @@ class CmdInterpreter {
   };
 */
 long nextControlSecs = 0 ;
-#define controlCycleSecs 3600
+#define controlCycleSecs 600
 //#define controlCycleSecs 60
 
 void callControlJob () {
